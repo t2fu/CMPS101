@@ -1,0 +1,21 @@
+Programming Assignment 2 (pa2)
+Programmer: Tiancheng Fu
+Class: CMPS 101
+Date: April 22nd, 2018
+Cruzid: tfu6
+
+All of the files that been submitted:
+
+Makefile
+README
+List.c
+List.h
+ListClient.c
+Lex.c
+
+Note: The submitted files implement the service of a client module: Lex.c. The List.c includes
+the doubly linked list class and functions. The Lex.c is the main file and it will read two user input args
+then implement the inserting process of elements from the input file, which named in the first args,
+into the output file, which named in the second args. The ListClient.c is the
+exact same file provides on the course webpage. The list.h is the header file for List.c,
+ListClient.c, and Lex.c, and it includes all the functions that will be overrided by functions in List.c.

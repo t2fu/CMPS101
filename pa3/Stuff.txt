@@ -1,0 +1,94 @@
+            //Row = S.column;
+         // }else if(matrix[a].get() == null && M.matrix[Row].get() != null){
+           // D = (Entry)M.matrix[Row].get();
+            //if(D.column == i+1){
+            //  newValue = newValue + D.value*0;
+            //}
+          //}else if(matrix[a].get() != null && M.matrix[Row].get() == null){
+            //S = (Entry)matrix[Row].get();
+            ////if(S.column == i+1){
+              //newValue = newValue + S.value*0;
+           // //}
+
+  Matrix mult(Matrix M){
+ // returns a new Matrix that is the product of this Matrix with M
+ // pre: getSize()==M.getSize()
+    Matrix newMatrix = new Matrix(this.n);
+    newMatrix.n = this.n;
+    newMatrix.size = 0;
+    
+    if(getSize() == M.getSize()){
+      //Matrix tMatrix = M.transpose();
+    if(this == M){
+       //System.out.println("runned");
+       Matrix B = copy();
+       return mult(B);
+        
+    }else{
+    int end = 0;
+    for(int a = 0; a < n; a++){
+      //System.out.println("Row: "+(a+1));
+      for(int i = 0; i < n; i++){
+        //System.out.println("Column: "+(i+1));
+        matrix[a].moveFront();
+        double newValue = 0;
+        int newColumn = i+1;
+        int Row = 0;
+        for(int j = 0; j < n; j++){
+          Row = j;
+          M.matrix[Row].moveFront();
+          Entry S = (Entry)matrix[a].get();
+          Entry D = (Entry)M.matrix[Row].get();
+          int lastP = 0;
+          for(int k = 0; k < i;k++){
+            //Node check = (Node)M.matrix[Row].cursor;
+            //if(check.next != null){
+            M.matrix[Row].moveNext();
+            //System.out.println(D.column+"<"+M.matrix[Row].length()+"moved next"); 
+            lastP++;
+            //}
+          }
+            if(M.matrix[Row].get() == null){
+              M.matrix[Row].moveFront();
+              for(int z = 0;z < lastP-1;z++){
+                M.matrix[Row].moveNext();
+              }
+          }
+          //System.out.println(Row+" "+matrix[a].get() +" "+ M.matrix[Row].get());
+          if(matrix[a].get() != null && M.matrix[Row].get() != null){
+            //System.out.println("Run");
+            S = (Entry)matrix[a].get();
+            D = (Entry)M.matrix[Row].get();
+            //System.out.println(S.column + " == " + (j+1));
+            //System.out.println(newColumn + "newColumn == " + D.column);
+            if(S.column == j+1 && newColumn==D.column){
+              //newColumn = S.column;
+              newValue = newValue + S.value*D.value;
+              //System.out.println("Run "+ (j+1) + ": " + S.value + " * " + D.value);
+              
+              //System.out.println((i+1)+" "+newValue);
+            }
+           //System.out.println("matrix[a].next: "+matrix[a].get());
+           //Row++;
+           //System.out.println("matrix[Row]: "+M.matrix[Row].get());
+          }
+          //matrix[a].moveNext();
+          //Row++;
+          //M.matrix[i].moveNext();
+         if(S !=null && matrix[a] != null && S.column < matrix[a].length()){
+          matrix[a].moveNext();
+          }
+        }
+        //newValue = newValue + S.value*D.value;
+        if(newValue != 0){
+          newColumn = i+1;
+          Entry newEntry = new Entry(newColumn, newValue);
+          newMatrix.matrix[a].append(newEntry);
+          newMatrix.size++;
+        }
+      }
+     }
+    }
+  }
+    return newMatrix;
+  }

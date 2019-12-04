@@ -1,0 +1,22 @@
+Programming Assignment 4 (pa4)
+Programmer: Tiancheng Fu
+Class: CMPS 101
+Date: May 29th, 2019
+Cruzid: tfu6
+
+All of the files that been submitted:
+
+List.c
+List.h
+Graph.c
+Graph.h
+GraphTest.c
+FindPath.c
+Makefile
+README
+
+Note: The submitted files implement the service of the FindPath module. The List.c includes
+the doubly linked list class and methods. The FindPath.c is the main file and it will read two user input args
+then implement the Graph ADTs to process the adjacency list from the input file, which named in the first args,
+into the output file, which named in the second args. The Graph.c includes all the Graph ADTs
+that will be used in the FindPath.c. The GraphTest.c tests the ADTs in the Graph.java.

@@ -1,0 +1,18 @@
+/* 
+ * Assignment: Programming Assignment 3(pa3)
+ * Programmer: Tiancheng Fu
+ * CruzId: tfu6
+ * Student id: 1600058
+ */
+public class MatrixTest{
+  public static void main (String [] args){
+  int n = 3;
+  Matrix A = new Matrix(n);
+  Matrix B = new Matrix(n);
+    
+  A.changeEntry(1,1,1);
+  
+  
+  
+  }
+}

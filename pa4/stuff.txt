@@ -1,0 +1,36 @@
+  /*if(G->neighbor[getSource(G)] != NULL){
+    //moveFront(G->neighbor[getSource(G)]);
+    List temp = newList();
+    int current = getSource(G);
+    int error = 0;
+    //int confirm = -1;
+    temp = G->neighbor[getSource(G)];
+    append(L, getSource(G));
+    G->distance[u]++;
+    while(temp != NULL && current != u && error < getOrder(G)){
+      moveFront(temp);
+      int MinV = get(G->neighbor[current]);
+      for(int i = 0; i < length(G->neighbor[current])-1; i++){
+        int t = get(G->neighbor[current]);
+        if(t < MinV){
+          MinV = t;
+        }
+        if(t == u){
+          append(L, u);
+          current = u;
+        }
+        moveNext(temp);
+      }
+      if(current != u){
+      current = MinV;
+      error++;
+      append(L, current);
+      G->distance[u]++;
+      temp = G->neighbor[current];
+      }
+    }
+    if(current != u){
+      clear(L);
+      append(L, NIL);
+    }
+  }*/

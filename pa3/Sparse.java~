@@ -1,0 +1,68 @@
+/*
+ * Assignment: Programming Assignment 3(pa3)
+ * Programmer: Tiancheng Fu
+ * CruzId: tfu6
+ * Student id: 1600058
+ */
+import java.util.*;
+import java.io.*;
+public class Sparse{
+  public static void main(String [] args) throws Exception{
+      
+      if (args.length == 2){
+        String inputName = args[0];
+        String outputName = args[1];
+        
+        File file = new File(inputName);
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        
+        String temp; 
+        int n = 0; // Dimension
+        int a = 0; // Non-zero size of first matrix
+        int b = 0; // Non-zero size of second matrix
+          if ((temp = br.readLine()) != null){        
+             String[] tokens = temp.split(" ");
+             n = Integer.valueOf(tokens[0]);
+             a = Integer.valueOf(tokens[1]);
+             b = Integer.valueOf(tokens[2]);
+          }
+
+        //String [] words = new String [n];
+        //int count = 0;
+          int newRow = 0;
+          int newColumn = 0;
+          double newValue = 0;
+          Matrix newMatrix1 = new Matrix(n);
+          Matrix newMatrix2 = new Matrix(n);
+          br.readLine();
+          while ((temp = br.readLine()) != null && (temp = br.readLine()) != " "){
+             String[] tokens = temp.split(" ");
+             newRow = Integer.valueOf(tokens[0]);
+             newColumn = Integer.valueOf(tokens[1]);
+             newValue = Double.valueOf(tokens[2]);
+             //newMatrix1.changeEntry
+          }
+          
+          br.readLine();
+          while ((temp = br.readLine()) != null && (temp = br.readLine()) != " "){
+             String[] tokens = temp.split(" ");
+             newRow = Integer.valueOf(tokens[0]);
+             newColumn = Integer.valueOf(tokens[1]);
+             newValue = Double.valueOf(tokens[2]);           
+          }
+        br.close();
+        
+        PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(outputName)));
+        index.moveFront();
+        for(int z=0; z < n; z++){
+          writer.println(words[index.get()]);
+          index.moveNext();
+        }
+        writer.close();
+        
+      }else{
+        System.err.println("Input Error");
+        System.exit(1);
+      }
+    }
+}

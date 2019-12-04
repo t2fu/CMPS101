@@ -1,0 +1,22 @@
+Programming Assignment 3 (pa3)
+Programmer: Tiancheng Fu
+Class: CMPS 101
+Date: May 13th, 2018
+Cruzid: tfu6
+
+All of the files that been submitted:
+
+Sparse.java
+Makefile
+README
+List.java
+MatrixTest.java
+ListTest.java
+Matrix.java
+
+Note: The submitted files implement the service of the Sparse module. The List.java includes
+the doubly linked list class and methods. The Sparse.java is the main file and it will read two user input args
+then implement the Matrix ADTs to process the two matrix from the input file, which named in the first args,
+into the output file, which named in the second args. The Matrix.java includes all the Matrix ADTs
+that will be used in the Sparse.java. The MatrixTest.java tests the ADTs in the Matrix.java.
+The ListTest.java tests the ADTs in the List.java.
